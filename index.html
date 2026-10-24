@@ -110,7 +110,7 @@
       border-color: #ff1493;
     }
 
-    /* Foto alanı */
+    /* Fotoğraf Alanı */
     .img-wrapper {
       position: relative;
       width: 100%;
@@ -277,7 +277,7 @@
   </div>
 
   <script>
-    // Arka plan kalplerini oluştur
+    // Arka plan kalpleri
     const bgContainer = document.getElementById('bg-hearts');
     const hearts = ['💖', '💕', '💗', '💓', '🌸', '✨'];
     for (let i = 0; i < 15; i++) {
@@ -297,19 +297,19 @@
     const wrapper = document.getElementById('img-wrapper');
     const soundSelect = document.getElementById('sound-select');
 
-    // X/Twitter Video Ses Dosyası
-    const letsGoAudio = new Audio('https://twitsave.com/download?url=https://x.com/furyanapti/status/2099898994893758576/video/1');
+    // GitHub ekranında görünen tam ses dosyası ismi:
+    const soundFileName = encodeURIComponent('--letsgo A AAAA LETSGO MU _ -letsgo nasl yani ____2099898975721488384.mp3');
+    const letsGoAudio = new Audio(soundFileName);
 
     let mıncırCount = 0;
 
-    // Ses Çalma Fonksiyonu
+    // Ses Çalma
     function playSelectedSound() {
       const selected = soundSelect.value;
 
       if (selected === 'letsgo') {
         letsGoAudio.currentTime = 0;
         letsGoAudio.play().catch(() => {
-          // Tarayıcı kısıtlaması olursa yedek cıvık ses çalsın
           playSynthesizedSound('squish');
         });
       } else {
@@ -317,7 +317,7 @@
       }
     }
 
-    // Web Audio Efektleri
+    // Yedek Ses Efektleri
     function playSynthesizedSound(type) {
       try {
         const ctx = new (window.AudioContext || window.webkitAudioContext)();
@@ -345,7 +345,7 @@
       } catch (e) {}
     }
 
-    // Patlama efektleri
+    // Efektler
     function createBurst(x, y) {
       const particles = ['💖', '💕', '💓', '💗', '🤏🏻', '✨', '🌸', '🥺'];
       for (let i = 0; i < 12; i++) {
@@ -370,7 +370,7 @@
       }
     }
 
-    // Mıncırma Tıklama Mantığı
+    // Tıklama
     function doMincir(e) {
       mıncırCount++;
       countEl.innerText = mıncırCount;
