@@ -297,13 +297,13 @@
     const wrapper = document.getElementById('img-wrapper');
     const soundSelect = document.getElementById('sound-select');
 
-    // GitHub ekranında görünen tam ses dosyası ismi:
+    // GitHub'a yüklediğin ses dosyasının tam adı:
     const soundFileName = encodeURIComponent('--letsgo A AAAA LETSGO MU _ -letsgo nasl yani ____2099898975721488384.mp3');
     const letsGoAudio = new Audio(soundFileName);
 
     let mıncırCount = 0;
 
-    // Ses Çalma
+    // Ses Çalma Fonksiyonu
     function playSelectedSound() {
       const selected = soundSelect.value;
 
@@ -317,7 +317,7 @@
       }
     }
 
-    // Yedek Ses Efektleri
+    // Sentetik Ses Efektleri
     function playSynthesizedSound(type) {
       try {
         const ctx = new (window.AudioContext || window.webkitAudioContext)();
@@ -345,7 +345,7 @@
       } catch (e) {}
     }
 
-    // Efektler
+    // Patlama efektleri
     function createBurst(x, y) {
       const particles = ['💖', '💕', '💓', '💗', '🤏🏻', '✨', '🌸', '🥺'];
       for (let i = 0; i < 12; i++) {
@@ -370,7 +370,7 @@
       }
     }
 
-    // Tıklama
+    // Mıncırma Tıklaması
     function doMincir(e) {
       mıncırCount++;
       countEl.innerText = mıncırCount;
