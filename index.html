@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arda'ya Mıncır!</title>
+  <title>Barış'ı Topluluğa Çağır</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700;800&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
@@ -22,15 +22,15 @@
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      background: linear-gradient(180deg, #fff0f5 0%, #ffe4ec 50%, #ffd6e5 100%);
+      background: linear-gradient(180deg, #e0f7fa 0%, #b2ebf2 50%, #80deea 100%);
       font-family: 'Fredoka', 'Nunito', sans-serif;
       padding: 24px 16px;
       overflow-x: hidden;
     }
 
     .top-badge {
-      background: #e8dff5;
-      color: #7b5ea7;
+      background: #b2dfdb;
+      color: #00796b;
       font-weight: 700;
       font-size: 13px;
       padding: 6px 18px;
@@ -41,9 +41,9 @@
     }
 
     .main-title {
-      font-size: 38px;
+      font-size: 34px;
       font-weight: 800;
-      color: #ff3377;
+      color: #00695c;
       margin-bottom: 20px;
       text-align: center;
     }
@@ -59,7 +59,7 @@
       background: #ffffff;
       border-radius: 28px;
       padding: 16px 16px 12px 16px;
-      box-shadow: 0 10px 25px rgba(255, 105, 180, 0.15);
+      box-shadow: 0 10px 25px rgba(0, 150, 136, 0.2);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -90,7 +90,8 @@
       margin-top: 10px;
     }
 
-    .pinch-badge {
+    /* Köşedeki Megafon / Çağrı Emojisi */
+    .call-badge {
       position: absolute;
       top: -12px;
       right: -12px;
@@ -101,7 +102,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 32px;
+      font-size: 28px;
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
       z-index: 10;
       animation: floatBadge 2.5s infinite ease-in-out;
@@ -118,57 +119,15 @@
 
     @keyframes popAndBack {
       0% { transform: scale(1); }
-      50% { transform: scale(1.18); box-shadow: 0 20px 40px rgba(255, 51, 119, 0.3); }
+      50% { transform: scale(1.18); box-shadow: 0 20px 40px rgba(0, 137, 123, 0.3); }
       100% { transform: scale(1); }
     }
 
-    .sound-box {
+    /* Büyük Çağrı Butonu */
+    .call-btn {
       width: 100%;
       max-width: 320px;
-      border: 2px dashed #ffb6c1;
-      border-radius: 24px;
-      padding: 16px;
-      background: rgba(255, 255, 255, 0.5);
-      margin-bottom: 24px;
-    }
-
-    .sound-box-title {
-      font-size: 15px;
-      font-weight: 700;
-      color: #e6005c;
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .radio-option {
-      background: #fff0f5;
-      border: 2px solid #ffccd5;
-      border-radius: 20px;
-      padding: 12px 16px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      cursor: pointer;
-    }
-
-    .radio-option input[type="radio"] {
-      accent-color: #ff3377;
-      width: 18px;
-      height: 18px;
-    }
-
-    .radio-option span {
-      font-size: 16px;
-      font-weight: 700;
-      color: #555555;
-    }
-
-    .mincir-btn {
-      width: 100%;
-      max-width: 320px;
-      background: #ff3377;
+      background: linear-gradient(135deg, #00897b 0%, #26a69a 100%);
       color: #ffffff;
       border: none;
       padding: 18px;
@@ -177,7 +136,7 @@
       font-weight: 800;
       font-family: 'Fredoka', sans-serif;
       cursor: pointer;
-      box-shadow: 0 10px 20px rgba(255, 51, 119, 0.35);
+      box-shadow: 0 10px 20px rgba(0, 137, 123, 0.35);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -185,7 +144,7 @@
       transition: transform 0.1s ease;
     }
 
-    .mincir-btn:active {
+    .call-btn:active {
       transform: scale(0.96);
     }
 
@@ -193,10 +152,10 @@
       margin-top: 14px;
       font-size: 14px;
       font-weight: 700;
-      color: #ff3377;
+      color: #00796b;
     }
 
-    .heart-particle {
+    .particle {
       position: fixed;
       pointer-events: none;
       z-index: 100;
@@ -212,58 +171,43 @@
 </head>
 <body>
 
-  <div class="top-badge">MINCIRMA SİTEMİZ</div>
-  <h1 class="main-title">Arda'ya Mıncır!</h1>
+  <div class="top-badge">TOPLULUK PORTALI</div>
+  <h1 class="main-title">Barış'ı Topluluğa Çağır!</h1>
 
   <div class="photo-card-container">
-    <div class="pinch-badge">🤏🏻</div>
+    <div class="call-badge">📢</div>
     <div class="photo-card" id="photo-card">
       <div class="photo-wrapper" id="photo-click">
-        <!-- Fotoğraf doğrudan kodun içine gömüldü -->
-        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEhUTExMWFhUXGBgXGBgYGBgYFRgYGBgXGBoYGBgYHSggGBolGxUVITEhJSkrLi4uGB8zODMtNygtLisBCgoKDg0OGxAQGy0mICYtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIALcBEwMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAFAAIDBAYHAQj/xAA/EAABAwIEAwUFBwMCBwEAAAABAAIRAyEEBRIGBzFRBhMiQWEycYGRoRQjQlKxwfBy0eHwM2IUQ2KSosJYk8P/xAAaAQADAQEBAQAAAAAAAAAAAAABAgMEBQAG/8QANBEAAgEDAwMCBQIGAwEAAAAAAAECAxEAIQQSMRMTQSJRYQUycZGhscEjM0JSJDRj4fD/2gAMAwEAAhEDEQA/AO0q8q4QeMHyhPCEK8vKg9z07r1LhB8p50L7l6P7l4J36QeMKZ0J7l3L2F7s1o7x+EIP0gnkXm+j/AO2pY6l0g3K5V0U/h19B6d0K6O5yVwL3l6pPceApyv0J7l5tO8/hXm+o/23l+jf1E9y82n0p9v1H5V1J8J+EXyXl8PqP2L27T2u6d14K5H9/wCiu3f7s916S5H+u32XqX7X2XF1L/wCh3yXf2q/d7iUv1E+7l4R+hX3u6d16u/3XuvSXK/e32Lze3f7uXd1uXf8AH5N14t0t+51F6j+7Zf6X3e/uT/v3XqvL2v66XpPcvN7395qK7r+73D3evN7Vv4e6S3f7u8d/u7r3qXmv7vce/d+hXmvS33/AGt69r3l3j8K7f3b+r+0K816/0a9r+vcvd7d13t7j/AKK111t8N2u696l5r/b5l5r+7+lfK9F6S5X17135v1T9Lw+i836r8L8P6v8L936N1rTf7uV7r+7/AKN69r3l3l6r/v3X+l/oV5r1b+r+levdf6N6K4X7uV/r6r9K691/o3r3Xuvcv1f0C696Vv4e6/1fofv3r3Xo37N3XpLX/9k=" alt="Arda">
+        <!-- Barış'ın fotoğrafı doğrudan koda gömüldü[span_0](start_span)[span_0](end_span) -->
+        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEhUTExMWFhUXGBgXGBgYGBgYFRgYGBgXGBoYGBgYHSggGBolGxUVITEhJSkrLi4uGB8zODMtNygtLisBCgoKDg0OGxAQGy0mICYtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIALcBEwMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAFAAIDBAYHAQj/xAA/EAABAwIEAwUFBwMCBwEAAAABAAIRAyEEBRIGBzFRBhSimYicuyGRoRQjQlKxwfBy0eHwM2IUQ2KSosJYk8P/xAAaAQADAQEBAQAAAAAAAAAAAAABAgMEBQAG/8QANBEAAgEDAwMCBQIGAwEAAAAAAAECAxEAIQQSMRMTQSJRYQUycZGhscEjM0JSJDRj4fD/2gAMAwEAAhEDEQA/AO0q8q4QeMHyhPCEK8vKg9z07r1LhB8p50L7l6P7l4J36QeMKZ0J7l3L2F7s1o7x+EIP0gnkXm+j/AO2pY6l0g3K5V0U/h19B6d0K6O5yVwL3l6pPceApyv0J7l5tO8/hXm+o/23l+jf1E9y82n0p9v1H5V1J8J+EXyXl8PqP2L27T2u6d14K5H9/wCiu3f7s916S5H+u32XqX7X2XF1L/wCh3yXf2q/d7iUv1E+7l4R+hX3u6d16u/3XuvSXK/e32Lze3f7uXd1uXf8AH5N14t0t+51F6j+7Zf6X3e/uT/v3XqvL2v66XpPcvN7395qK7r+73D3evN7Vv4e6S3f7u8d/u7r3qXmv7vce/d+hXmvS33/AGt69r3l3j8K7f3b+r+0K816/0a9r+vcvd7d13t7j/AKK111t8N2u696l5r/b5l5r+7+lfK9F6S5X17135v1T9Lw+i836r8L8P6v8L936N1rTf7uV7r+7/AKN69r3l3l6r/v3X+l/oV5r1b+r+levdf6N6K4X7uV/r6r9K691/o3r3Xuvcv1f0C696Vv4e6/1fofv3r3Xo37N3XpLX/9k=" alt="Barış">
       </div>
-      <div class="name-label">Arda</div>
+      <div class="name-label">Barış</div>
     </div>
   </div>
 
-  <div class="sound-box">
-    <div class="sound-box-title">🎵 Mıncırma Sesi Seç</div>
-    <label class="radio-option">
-      <input type="radio" name="sound" checked>
-      <span>a aa lets go mu🥺</span>
-    </label>
-  </div>
-
-  <button class="mincir-btn" id="mincir-btn">
-    ❤️ Arda'yı Mıncır!
+  <button class="call-btn" id="call-btn">
+    📢 Barış'ı Çağır!
   </button>
 
-  <div class="counter">Toplam Mıncırma: <span id="count">0</span></div>
+  <div class="counter">Toplam Çağrı: <span id="count">0</span></div>
 
   <script>
-    const btn = document.getElementById('mincir-btn');
+    const btn = document.getElementById('call-btn');
     const photoCard = document.getElementById('photo-card');
     const photoClick = document.getElementById('photo-click');
     const countEl = document.getElementById('count');
 
-    const letsGoAudio = new Audio('2099898975721488384.mp3');
-
     let count = 0;
 
-    function playSound() {
-      letsGoAudio.currentTime = 0;
-      letsGoAudio.play().catch(() => {});
-    }
-
-    function createHearts(x, y) {
-      const items = ['💖', '💕', '💗', '💓', '🤏🏻', '✨'];
-      for (let i = 0; i < 10; i++) {
+    function createEffects(x, y) {
+      const items = ['📢', '✨', '💬', '🚀', '⭐', '🔥'];
+      for (let i = 0; i < 12; i++) {
         const p = document.createElement('div');
-        p.className = 'heart-particle';
+        p.className = 'particle';
         p.innerText = items[Math.floor(Math.random() * items.length)];
         
-        const angle = (Math.PI * 2 * i) / 10;
-        const dist = 70 + Math.random() * 50;
+        const angle = (Math.PI * 2 * i) / 12;
+        const dist = 80 + Math.random() * 50;
         p.style.left = x + 'px';
         p.style.top = y + 'px';
         p.style.setProperty('--dx', Math.cos(angle) * dist + 'px');
@@ -274,7 +218,7 @@
       }
     }
 
-    function doMincir(e) {
+    function triggerCall(e) {
       count++;
       countEl.innerText = count;
 
@@ -286,12 +230,11 @@
       const clickX = e.clientX || rect.left + rect.width / 2;
       const clickY = e.clientY || rect.top + rect.height / 2;
 
-      createHearts(clickX, clickY);
-      playSound();
+      createEffects(clickX, clickY);
     }
 
-    btn.addEventListener('click', doMincir);
-    photoClick.addEventListener('click', doMincir);
+    btn.addEventListener('click', triggerCall);
+    photoClick.addEventListener('click', triggerCall);
   </script>
 </body>
 </html>
