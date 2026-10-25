@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arda'yı Mıncır 🤏🏻</title>
+  <title>Arda'ya Mıncır!</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700;800&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
@@ -21,189 +21,191 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #feada6 100%);
+      justify-content: flex-start;
+      background: linear-gradient(180deg, #fff0f5 0%, #ffe4ec 50%, #ffd6e5 100%);
       font-family: 'Fredoka', 'Nunito', sans-serif;
+      padding: 24px 16px;
       overflow-x: hidden;
-      position: relative;
-      padding: 20px 0;
     }
 
-    /* Arka plan kalpleri */
-    .bg-heart {
-      position: absolute;
-      color: rgba(255, 255, 255, 0.4);
-      font-size: 24px;
-      pointer-events: none;
-      animation: floatUp 8s infinite linear;
-      z-index: 1;
-    }
-
-    @keyframes floatUp {
-      0% {
-        transform: translateY(105vh) scale(0.8) rotate(0deg);
-        opacity: 0;
-      }
-      20% { opacity: 0.8; }
-      80% { opacity: 0.8; }
-      100% {
-        transform: translateY(-10vh) scale(1.3) rotate(360deg);
-        opacity: 0;
-      }
-    }
-
-    .main-card {
-      position: relative;
-      z-index: 10;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 24px;
-      background: rgba(255, 255, 255, 0.35);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-radius: 36px;
-      border: 3px solid rgba(255, 255, 255, 0.6);
-      box-shadow: 0 20px 50px rgba(230, 80, 120, 0.25);
-      max-width: 90vw;
-      width: 380px;
-    }
-
-    /* Ses Seçim Kutusu */
-    .sound-selector-container {
-      width: 100%;
-      margin-bottom: 16px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .sound-label {
-      font-size: 14px;
+    /* Üst Rozet */
+    .top-badge {
+      background: #e8dff5;
+      color: #7b5ea7;
       font-weight: 700;
-      color: #c2185b;
-      display: flex;
-      align-items: center;
-      gap: 6px;
+      font-size: 13px;
+      padding: 6px 18px;
+      border-radius: 20px;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
     }
 
-    .sound-select {
-      width: 100%;
-      padding: 10px 16px;
-      border-radius: 20px;
-      border: 2px solid #ff69b4;
-      background: rgba(255, 255, 255, 0.9);
-      color: #d63384;
-      font-family: 'Fredoka', sans-serif;
-      font-weight: 600;
-      font-size: 15px;
-      outline: none;
-      cursor: pointer;
-      box-shadow: 0 4px 12px rgba(255, 105, 180, 0.15);
-      transition: all 0.2s ease;
+    /* Ana Başlık */
+    .main-title {
+      font-size: 38px;
+      font-weight: 800;
+      color: #ff3377;
+      margin-bottom: 20px;
       text-align: center;
     }
 
-    /* Fotoğraf Alanı */
-    .img-wrapper {
+    /* Foto Kartı */
+    .photo-card-container {
       position: relative;
       width: 100%;
-      height: 420px;
-      border-radius: 24px;
-      overflow: visible;
-      cursor: pointer;
-      perspective: 1000px;
+      max-width: 320px;
+      margin-bottom: 24px;
     }
 
-    .arda-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 24px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-      border: 4px solid #ffffff;
+    .photo-card {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 16px 16px 12px 16px;
+      box-shadow: 0 10px 25px rgba(255, 105, 180, 0.15);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       transition: transform 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
-    /* Kenardaki 🤏🏻 emojisi */
+    .photo-wrapper {
+      width: 100%;
+      height: 300px;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #f0f0f0;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .photo-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .name-label {
+      font-size: 20px;
+      font-weight: 800;
+      color: #4a4a4a;
+      margin-top: 10px;
+    }
+
+    /* Köşedeki 🤏🏻 Emojisi Rozeti */
     .pinch-badge {
       position: absolute;
-      top: -15px;
-      right: -15px;
-      font-size: 42px;
+      top: -12px;
+      right: -12px;
       background: #ffffff;
-      width: 65px;
-      height: 65px;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 50%;
-      box-shadow: 0 8px 20px rgba(255, 105, 180, 0.4);
-      border: 3px solid #ff69b4;
-      z-index: 20;
-      transition: transform 0.2s ease;
-      animation: pulsePinch 2s infinite ease-in-out;
+      font-size: 32px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+      z-index: 10;
+      animation: floatBadge 2.5s infinite ease-in-out;
     }
 
-    @keyframes pulsePinch {
-      0%, 100% { transform: scale(1) rotate(0deg); }
-      50% { transform: scale(1.1) rotate(12deg); }
+    @keyframes floatBadge {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-4px) scale(1.08); }
     }
 
-    /* Öne gelip çekilme animasyonu */
+    /* Öne fırlama animasyonu */
     .pop-forward {
-      animation: popAndShrink 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.4) !important;
+      animation: popAndBack 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.3) !important;
     }
 
-    @keyframes popAndShrink {
+    @keyframes popAndBack {
       0% { transform: scale(1); }
-      50% { transform: scale(1.22) translateZ(40px); box-shadow: 0 25px 50px rgba(255, 20, 147, 0.4); }
+      50% { transform: scale(1.18); box-shadow: 0 20px 40px rgba(255, 51, 119, 0.3); }
       100% { transform: scale(1); }
     }
 
-    /* İsim yazısı */
-    .name-title {
-      font-size: 20px;
+    /* Ses Seçim Alanı */
+    .sound-box {
+      width: 100%;
+      max-width: 320px;
+      border: 2px dashed #ffb6c1;
+      border-radius: 24px;
+      padding: 16px;
+      background: rgba(255, 255, 255, 0.5);
+      margin-bottom: 24px;
+    }
+
+    .sound-box-title {
+      font-size: 15px;
       font-weight: 700;
-      color: #d63384;
-      margin-top: 14px;
-      margin-bottom: 16px;
-      text-transform: lowercase;
-      letter-spacing: 1px;
-      opacity: 0.9;
+      color: #e6005c;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .radio-option {
+      background: #fff0f5;
+      border: 2px solid #ffccd5;
+      border-radius: 20px;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+    }
+
+    .radio-option input[type="radio"] {
+      accent-color: #ff3377;
+      width: 18px;
+      height: 18px;
+    }
+
+    .radio-option span {
+      font-size: 16px;
+      font-weight: 700;
+      color: #555555;
     }
 
     /* Mıncır Butonu */
     .mincir-btn {
-      background: linear-gradient(135deg, #ff4081 0%, #ff69b4 100%);
-      color: white;
+      width: 100%;
+      max-width: 320px;
+      background: #ff3377;
+      color: #ffffff;
       border: none;
-      padding: 16px 36px;
-      font-size: 22px;
-      font-weight: 700;
-      font-family: 'Fredoka', sans-serif;
+      padding: 18px;
       border-radius: 50px;
+      font-size: 24px;
+      font-weight: 800;
+      font-family: 'Fredoka', sans-serif;
       cursor: pointer;
-      box-shadow: 0 10px 25px rgba(255, 64, 129, 0.4);
-      transition: all 0.15s ease;
+      box-shadow: 0 10px 20px rgba(255, 51, 119, 0.35);
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 10px;
+      transition: transform 0.1s ease;
     }
 
     .mincir-btn:active {
-      transform: translateY(2px) scale(0.96);
+      transform: scale(0.96);
     }
 
+    /* Sayaç */
     .counter {
-      margin-top: 12px;
+      margin-top: 14px;
       font-size: 14px;
-      color: #c2185b;
-      font-weight: 600;
+      font-weight: 700;
+      color: #ff3377;
     }
 
-    .burst-particle {
+    /* Patlayan Kalpler */
+    .heart-particle {
       position: fixed;
       pointer-events: none;
       z-index: 100;
@@ -212,147 +214,95 @@
     }
 
     @keyframes explode {
-      0% { opacity: 1; transform: translate(0, 0) scale(0.5) rotate(0deg); }
-      100% { opacity: 0; transform: translate(var(--dx), var(--dy)) scale(1.6) rotate(var(--rot)); }
+      0% { opacity: 1; transform: translate(0, 0) scale(0.5); }
+      100% { opacity: 0; transform: translate(var(--dx), var(--dy)) scale(1.5); }
     }
   </style>
 </head>
 <body>
 
-  <div id="bg-hearts"></div>
+  <div class="top-badge">MINCIRMA SİTEMİZ</div>
+  <h1 class="main-title">Arda'ya Mıncır!</h1>
 
-  <div class="main-card">
-    <div class="sound-selector-container">
-      <label class="sound-label" for="sound-select">🔊 mıncırma sesi seç</label>
-      <select id="sound-select" class="sound-select">
-        <option value="letsgo">a aa lets go mu🥺</option>
-        <option value="squish">🤏🏻 Cıvık Mıncır Sesi</option>
-        <option value="pop">💖 Sevgi Kalp Sesi</option>
-      </select>
+  <div class="photo-card-container">
+    <div class="pinch-badge">🤏🏻</div>
+    <div class="photo-card" id="photo-card">
+      <div class="photo-wrapper" id="photo-click">
+        <img src="1000030872.jpg" onerror="this.onerror=null; this.src='HVbmCDJWMAEtK1r.jpg';" alt="Arda">
+      </div>
+      <div class="name-label">Arda</div>
     </div>
-
-    <div class="img-wrapper" id="img-wrapper">
-      <div class="pinch-badge" id="pinch-badge">🤏🏻</div>
-      <!-- Resim yüklenemezse doğrudan GitHub'daki dosyadan veya yerel dosyadan okunur -->
-      <img id="arda-photo" src="1000030872.jpg" onerror="this.onerror=null; this.src='HVbmCDJWMAEtK1r.jpg';" alt="arda" class="arda-img">
-    </div>
-
-    <div class="name-title">arda</div>
-
-    <button class="mincir-btn" id="mincir-btn">
-      ardayı mıncır 🤏🏻
-    </button>
-
-    <div class="counter">toplam mıncırma: <span id="count">0</span></div>
   </div>
 
+  <div class="sound-box">
+    <div class="sound-box-title">🎵 Mıncırma Sesi Seç</div>
+    <label class="radio-option">
+      <input type="radio" name="sound" checked>
+      <span>a aa lets go mu🥺</span>
+    </label>
+  </div>
+
+  <button class="mincir-btn" id="mincir-btn">
+    ❤️ Arda'yı Mıncır!
+  </button>
+
+  <div class="counter">Toplam Mıncırma: <span id="count">0</span></div>
+
   <script>
-    // Arka plan kalpleri
-    const bgContainer = document.getElementById('bg-hearts');
-    const hearts = ['💖', '💕', '💗', '💓', '🌸', '✨'];
-    for (let i = 0; i < 15; i++) {
-      const heart = document.createElement('div');
-      heart.className = 'bg-heart';
-      heart.innerText = hearts[Math.floor(Math.random() * hearts.length)];
-      heart.style.left = Math.random() * 100 + 'vw';
-      heart.style.animationDelay = Math.random() * 5 + 's';
-      heart.style.animationDuration = (6 + Math.random() * 4) + 's';
-      bgContainer.appendChild(heart);
-    }
-
-    const img = document.getElementById('arda-photo');
     const btn = document.getElementById('mincir-btn');
-    const badge = document.getElementById('pinch-badge');
+    const photoCard = document.getElementById('photo-card');
+    const photoClick = document.getElementById('photo-click');
     const countEl = document.getElementById('count');
-    const wrapper = document.getElementById('img-wrapper');
-    const soundSelect = document.getElementById('sound-select');
 
-    // GitHub repository'ne yüklediğin o uzun mp3 dosyasının tam adını buraya yazdık[span_3](start_span)[span_3](end_span)
+    // GitHub'daki ses dosyası
     const audioUrl = encodeURI('--letsgo A AAAA LETSGO MU _ -letsgo nasl yani ____2099898975721488384.mp3');
-    const letsGoAudio = new Audio(audioUrl);
+    const audio = new Audio(audioUrl);
 
-    let mıncırCount = 0;
+    let count = 0;
 
-    function playSelectedSound() {
-      const selected = soundSelect.value;
-      if (selected === 'letsgo') {
-        letsGoAudio.currentTime = 0;
-        letsGoAudio.play().catch(() => playSynthesizedSound('squish'));
-      } else {
-        playSynthesizedSound(selected);
-      }
+    function playSound() {
+      audio.currentTime = 0;
+      audio.play().catch(() => {});
     }
 
-    function playSynthesizedSound(type) {
-      try {
-        const ctx = new (window.AudioContext || window.webkitAudioContext)();
-        const osc = ctx.createOscillator();
-        const gain = ctx.createGain();
+    function createHearts(x, y) {
+      const items = ['💖', '💕', '💗', '💓', '🤏🏻', '✨'];
+      for (let i = 0; i < 10; i++) {
+        const p = document.createElement('div');
+        p.className = 'heart-particle';
+        p.innerText = items[Math.floor(Math.random() * items.length)];
         
-        if (type === 'squish') {
-          osc.type = 'sine';
-          osc.frequency.setValueAtTime(350, ctx.currentTime);
-          osc.frequency.exponentialRampToValueAtTime(100, ctx.currentTime + 0.18);
-        } else {
-          osc.type = 'triangle';
-          osc.frequency.setValueAtTime(400, ctx.currentTime);
-          osc.frequency.exponentialRampToValueAtTime(800, ctx.currentTime + 0.12);
-        }
-        gain.gain.setValueAtTime(0.3, ctx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.18);
+        const angle = (Math.PI * 2 * i) / 10;
+        const dist = 70 + Math.random() * 50;
+        p.style.left = x + 'px';
+        p.style.top = y + 'px';
+        p.style.setProperty('--dx', Math.cos(angle) * dist + 'px');
+        p.style.setProperty('--dy', Math.sin(angle) * dist + 'px');
         
-        osc.connect(gain);
-        gain.connect(ctx.destination);
-        osc.start();
-        osc.stop(ctx.currentTime + 0.2);
-      } catch (e) {}
-    }
-
-    function createBurst(x, y) {
-      const particles = ['💖', '💕', '💓', '💗', '🤏🏻', '✨', '🌸', '🥺'];
-      for (let i = 0; i < 12; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'burst-particle';
-        particle.innerText = particles[Math.floor(Math.random() * particles.length)];
-        
-        const angle = (Math.PI * 2 * i) / 12;
-        const velocity = 80 + Math.random() * 60;
-        const dx = Math.cos(angle) * velocity + 'px';
-        const dy = Math.sin(angle) * velocity + 'px';
-        const rot = (Math.random() * 360 - 180) + 'deg';
-        
-        particle.style.left = x + 'px';
-        particle.style.top = y + 'px';
-        particle.style.setProperty('--dx', dx);
-        particle.style.setProperty('--dy', dy);
-        particle.style.setProperty('--rot', rot);
-        
-        document.body.appendChild(particle);
-        setTimeout(() => particle.remove(), 800);
+        document.body.appendChild(p);
+        setTimeout(() => p.remove(), 800);
       }
     }
 
     function doMincir(e) {
-      mıncırCount++;
-      countEl.innerText = mıncırCount;
+      count++;
+      countEl.innerText = count;
 
-      img.classList.remove('pop-forward');
-      void img.offsetWidth;
-      img.classList.add('pop-forward');
+      // Fotoğrafı öne büyütüp geri çek
+      photoCard.classList.remove('pop-forward');
+      void photoCard.offsetWidth;
+      photoCard.classList.add('pop-forward');
 
-      badge.style.transform = 'scale(1.4) rotate(-20deg)';
-      setTimeout(() => { badge.style.transform = ''; }, 200);
+      const rect = photoCard.getBoundingClientRect();
+      const clickX = e.clientX || rect.left + rect.width / 2;
+      const clickY = e.clientY || rect.top + rect.height / 2;
 
-      const rect = img.getBoundingClientRect();
-      const clickX = e ? e.clientX : rect.left + rect.width / 2;
-      const clickY = e ? e.clientY : rect.top + rect.height / 2;
-      
-      createBurst(clickX, clickY);
-      playSelectedSound();
+      createHearts(clickX, clickY);
+      playSound();
     }
 
     btn.addEventListener('click', doMincir);
-    wrapper.addEventListener('click', doMincir);
+    photoClick.addEventListener('click', doMincir);
   </script>
 </body>
 </html>
