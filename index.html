@@ -228,7 +228,7 @@
     <div class="pinch-badge">🤏🏻</div>
     <div class="photo-card" id="photo-card">
       <div class="photo-wrapper" id="photo-click">
-        <img src="1000030872.jpg" onerror="this.onerror=null; this.src='HVbmCDJWMAEtK1r.jpg';" alt="Arda">
+        <img src="HVbmCDJWMAEtK1r.jpg" alt="Arda">
       </div>
       <div class="name-label">Arda</div>
     </div>
@@ -254,15 +254,14 @@
     const photoClick = document.getElementById('photo-click');
     const countEl = document.getElementById('count');
 
-    // GitHub'daki ses dosyası
-    const audioUrl = encodeURI('--letsgo A AAAA LETSGO MU _ -letsgo nasl yani ____2099898975721488384.mp3');
-    const audio = new Audio(audioUrl);
+    // GitHub'daki ses dosyasının tam adı:
+    const letsGoAudio = new Audio('2099898975721488384.mp3');
 
     let count = 0;
 
     function playSound() {
-      audio.currentTime = 0;
-      audio.play().catch(() => {});
+      letsGoAudio.currentTime = 0;
+      letsGoAudio.play().catch(() => {});
     }
 
     function createHearts(x, y) {
@@ -288,7 +287,6 @@
       count++;
       countEl.innerText = count;
 
-      // Fotoğrafı öne büyütüp geri çek
       photoCard.classList.remove('pop-forward');
       void photoCard.offsetWidth;
       photoCard.classList.add('pop-forward');
